@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/sever.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/dist/css/bootstrap.css">
+</head>
+
+<body>
+    {{include './header.html'}}
+    <div class="nybanner">
+        <img src="/img/首图.jpg" class="pc_banner">
+        <div class="kejian clearfix">
+            <div class="banner_wen">服务案例</div>
+        </div>
+    </div>
+    <div class="position" style="background-color:#FFF;">
+        <div class="kejian">
+            <div class="position_wz">
+                <img src="/img/房子.jpg">
+                <span>></span>
+                <a href="/index">首页</a>
+                <span>></span>
+                <a href="/fwal">服务案例</a>
+            </div>
+        </div>
+    </div>
+    <div class="case">
+        <div class="kejian">
+            <ul class="caselist clearfix">
+                {{each serve}}
+                <li>
+                    <div class="case_img"><img src="{{$value.picture}}"></div>
+                    <div class="case_con"><span>{{$value.name}}</span>
+                        <p>{{$value.about}}</p>
+                        <p><br /></p>
+                        <p><br /></p>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+           
+            <nav aria-label="Page navigation" class="text-center">
+                    <ul class="pagination pager">
+                        <li class="disabled"><span>&laquo;</span></li>
+                        <li class="{{page==1?"active":""}}"><a href="/fwal/1">1</a></li>
+                        <li class="{{page==2?"active":""}}"><a href="/fwal/2">2</a></li>
+                        <li class="{{page==3?"active":""}}"><a href="/fwal/3">3</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                </ul>
+            </nav>
+           
+        </div>
+    </div>
+    {{include './footer.html'}}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <script src="/js/header.js"></script>
+   
+</body>
+
+</html>
